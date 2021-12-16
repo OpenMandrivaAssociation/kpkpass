@@ -22,6 +22,9 @@ BuildRequires: cmake(Qt5Gui)
 BuildRequires: cmake(Qt5Test)
 BuildRequires: cmake(KF5Archive)
 BuildRequires: shared-mime-info-devel
+# For QCH format docs
+BuildRequires: doxygen
+BuildRequires: qt5-assistant
 
 %description
 Library for handling Apple Wallet pass files
