@@ -1,16 +1,18 @@
 %define major 5
-%define libname %mklibname KPimPkPass %{major}
-%define devname %mklibname KPimPkPass -d
+%define oldlibname %mklibname KPimPkPass 5
+%define olddevname %mklibname KPimPkPass -d
+%define libname %mklibname KPim5PkPass
+%define devname %mklibname KPim5PkPass -d
 
 Name: 		kpkpass
-Version:	22.12.3
+Version:	23.03.90
 %define is_beta %(if test `echo %{version} |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
 %if %{is_beta}
 %define ftpdir unstable
 %else
 %define ftpdir stable
 %endif
-Release:	2
+Release:	1
 Source0: http://download.kde.org/%{ftpdir}/release-service/%{version}/src/%{name}-%{version}.tar.xz
 Summary:	Library for handling Apple Wallet pass files
 URL: http://kde.org/
@@ -33,6 +35,7 @@ Library for handling Apple Wallet pass files
 Summary: Library for handling Apple Wallet pass files
 Group: System/Libraries
 Requires: %{name} >= %{EVRD}
+%rename %{oldlibname}
 
 %description -n %{libname}
 Library for handling Apple Wallet pass files
@@ -41,6 +44,7 @@ Library for handling Apple Wallet pass files
 Summary: Development files for %{name}
 Group: Development/C
 Requires: %{libname} = %{EVRD}
+%rename %{olddevname}
 
 %description -n %{devname}
 Development files (Headers etc.) for %{name}.
@@ -59,10 +63,10 @@ Development files (Headers etc.) for %{name}.
 %{_datadir}/qlogging-categories5/org_kde_kpkpass.categories
 
 %files -n %{libname}
-%{_libdir}/libKPimPkPass.so.%{major}*
+%{_libdir}/libKPim5PkPass.so.%{major}*
 
 %files -n %{devname}
-%{_includedir}/KPim/KPkPass
+%{_includedir}/KPim5/KPkPass
 %{_libdir}/*.so
 %{_libdir}/cmake/*
 %doc %{_docdir}/qt5/*.{tags,qch}
