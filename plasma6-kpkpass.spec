@@ -20,7 +20,7 @@ Source0:	https://invent.kde.org/pim/kpkpass/-/archive/%{gitbranch}/kpkpass-%{git
 Source0: http://download.kde.org/%{ftpdir}/release-service/%{version}/src/kpkpass-%{version}.tar.xz
 %endif
 Summary:	Library for handling Apple Wallet pass files
-URL: http://kde.org/
+URL: https://kde.org/
 License: GPL
 Group: System/Libraries
 BuildRequires: cmake(ECM)
