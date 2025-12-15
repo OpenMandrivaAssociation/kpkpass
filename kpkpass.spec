@@ -6,7 +6,7 @@
 %define devname %mklibname KPim6PkPass -d
 
 Name: 		kpkpass
-Version:	25.08.3
+Version:	25.12.0
 %define is_beta %(if test `echo %{version} |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
 %if %{is_beta}
 %define ftpdir unstable
@@ -61,9 +61,11 @@ Development files (Headers etc.) for %{name}.
 
 %files
 %{_datadir}/qlogging-categories6/org_kde_kpkpass.categories
+%{_datadir}/mime/packages/application-vnd-apple-pkpasses.xml
 
 %files -n %{libname}
 %{_libdir}/libKPim6PkPass.so*
+%{_qtdir}/qml/org/kde/pkpass
 
 %files -n %{devname}
 %{_includedir}/KPim6/KPkPass
