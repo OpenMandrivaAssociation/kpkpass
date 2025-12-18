@@ -28,6 +28,7 @@ BuildRequires: cmake(Qt6)
 BuildRequires: cmake(Qt6Core)
 BuildRequires: cmake(Qt6DBus)
 BuildRequires: cmake(Qt6Gui)
+BuildRequires: cmake(Qt6Qml)
 BuildRequires: cmake(Qt6Test)
 BuildRequires: cmake(KF6Archive)
 BuildRequires: shared-mime-info-devel
